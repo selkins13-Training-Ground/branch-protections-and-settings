@@ -63,3 +63,12 @@ To enable this Probot on your own organization:
 1. Run `npm install` on in your CLI from the root of the repository to build the app locally
 1. Run `npm start` to start the app locally for testing
 1. Deploy the Probot app on the cloud service of your choice following [this guide](https://probot.github.io/docs/deployment/#deploy-the-app)
+
+## Run as Docker Container
+
+Once the PEM and environment variables have been filled out for your probot app, you can dockerize the build and run it locally.
+
+1. Run the following command to create the docker container:
+    `docker build . -t <container-name>`
+1. Run the following command to run the container:
+    `docker run -p 49160:8080 -d <container-name>`
