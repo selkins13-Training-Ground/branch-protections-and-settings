@@ -1,0 +1,52 @@
+{
+  "name": "probot-repo-settings",
+  "description": "Probot Example: Apply Repos Settings & Branch Protection",
+  "version": ">=9.15.1",
+  "keywords": [],
+  "author": {
+    "name": "GitHub Professional Services",
+    "email": "services@github.com",
+    "url": "https://services.github.com"
+  },
+  "contributors": [{
+    "name": "Stefan Stölzle",
+    "email": "stoe@github.com",
+    "url": "https://github.com/stoe"
+  }],
+  "license": "MIT",
+  "homepage": "https://services.github.com",
+  "repository": "git@github.com:github/services-toolbox",
+  "bugs": {
+    "url": "https://github.com/github/services-toolbox/issues"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "test": "github-lint",
+    "start": "probot run ./index.js"
+  },
+  "dependencies": {
+    "probot-serverless-now": ">=2.1.2",
+    "probot": "9.15.1"
+  },
+  "devDependencies": {
+    "eslint": ">=6.2.2",
+    "eslint-plugin-github": ">=3.1.1",
+    "nodemon": ">=1.19.1",
+    "smee-client": ">=1.1.0"
+  },
+  "resolutions": {
+    "handlebars": ">=4.1.0"
+  },
+  "nodemonConfig": {
+    "exec": "probot run ./lib/logger/index.js",
+    "watch": [
+      ".env",
+      "."
+    ]
+  }
+}
