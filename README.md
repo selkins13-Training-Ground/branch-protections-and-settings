@@ -72,3 +72,8 @@ Once the PEM and environment variables have been filled out for your probot app,
     `docker build . -t <container-name>`
 1. Run the following command to run the container:
     `docker run -p 49160:8080 -d <container-name>`
+
+## Resources:
+
+- [GitHub Services Toolbox- repo-settings](https://github.com/github/services-toolbox/tree/main/bots/probot/repo-settings)
+- [Probot help documents](https://probot.github.io/docs/)
