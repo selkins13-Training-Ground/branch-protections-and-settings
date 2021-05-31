@@ -76,7 +76,7 @@ module.exports = app => {
           owner,
           repo,
           branch
-        })
+        }),
       ])
         .then(values => {
           context.log.debug(values)
@@ -84,6 +84,19 @@ module.exports = app => {
         })
         .catch(error => {
           context.log.error(error)
+        })
+        await context.github.issues.create({
+          owner: `selkins13-Training-Ground`,
+          repo: `ideal-octo-meme`,
+          title: `${owner}/${repo} branch protection rules on ${branch}`,
+          body: `Hey @selkins13, make sure the branch following rules are in place: 
+          - Require the following status checks: Lint Code Base
+          - Require branches to be up to date before merging
+          - Enforce branch protection rules on administrators
+          - Require pull request reviews
+          - Dismiss stale reviews
+          - Restrict who can dismiss pull request reviews to organization and repository admins
+          - Restrict who can push to matching branches to organization and repository admins`
         })
     }
   })

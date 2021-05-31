@@ -20,6 +20,8 @@ It will also configure the following branch protection rules on `main`:
 - Restrict who can dismiss pull request reviews to organization and repository admins
 - Restrict who can push to matching branches to organization and repository admins
 
+When a new repository is created and the settings and protection rules have been put in place, it will create an issue in the Probot host repository.
+
 Probot applications must be hosted outside of GitHub.  You will need the following pre-requisites:
 
 - NPM on your local machine for building and testing the app
@@ -39,11 +41,13 @@ To enable this Probot on your own organization:
     - Webhook secret - this is recommended and can be created by following [these instructions](FAQ.md)
     - Under "Repository permissions" select the following:
         - Administration - "Read & write"
+        - Issues - "Read & write"
         - Contents - "Read-only"
         - Metadata - "Read-only"
         - Subscribe to events:
             - Create
             - Repository
+            - Issues
     - Select "Create GitHub App"
 1. Generate a private key for the application
 1. Save the PEM to the repository root location on local machine
